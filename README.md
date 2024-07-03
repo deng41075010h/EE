@@ -11,5 +11,5 @@ C/C++、Python、Java、Verilog、組合語言(8051)
 4. [學習分析工具實務應用期末專題](https://github.com/deng41075010h/LAT/tree/main/final%20project)
 
 ## 課程資料連結
-[學習分析工具實務應用](https://github.com/deng41075010h/LAT)
+教育大數據微學程 - [學習分析工具實務應用](https://github.com/deng41075010h/LAT)
 
