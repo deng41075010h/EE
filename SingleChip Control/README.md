@@ -33,5 +33,7 @@ ppt展示影片請看youtube
 <br>
 
 ### 程式碼
-見附件(project->project.ASM)
+見[附件](https://github.com/deng41075010h/EE/blob/main/SingleChip%20Control/project/project.ASM)  
+檔案路徑：project -> project.ASM
+
 
