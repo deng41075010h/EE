@@ -1,0 +1,7 @@
+Warning (10268): Verilog HDL information at project.v(45): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 45
+Warning (10268): Verilog HDL information at project.v(57): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 57
+Warning (10268): Verilog HDL information at project.v(69): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 69
+Warning (10268): Verilog HDL information at project.v(243): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 243
+Warning (10268): Verilog HDL information at project.v(379): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 379
+Warning (10268): Verilog HDL information at project.v(393): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 393
+Warning (10268): Verilog HDL information at project.v(407): always construct contains both blocking and non-blocking assignments File: C:/Users/tracy/Desktop/project/project.v Line: 407

@@ -1,0 +1,843 @@
+Analysis & Synthesis report for project
+Sun Jun 12 22:46:19 2022
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for Inferred Entity Instance: game2:comb_174|lpm_mult:Mult0
+ 12. Parameter Settings for Inferred Entity Instance: game2:comb_174|lpm_mult:Mult1
+ 13. lpm_mult Parameter Settings by Entity Instance
+ 14. Port Connectivity Checks: "game2:comb_174|bcd:U6"
+ 15. Port Connectivity Checks: "game2:comb_174|bcd:U5"
+ 16. Port Connectivity Checks: "game2:comb_174|bcd:U4"
+ 17. Port Connectivity Checks: "game2:comb_174|bcd:U3"
+ 18. Port Connectivity Checks: "game2:comb_174|bcd:U2"
+ 19. Port Connectivity Checks: "game2:comb_174|bcd:U1"
+ 20. Port Connectivity Checks: "game1:comb_173|bcd:U6"
+ 21. Port Connectivity Checks: "game1:comb_173|bcd:U5"
+ 22. Port Connectivity Checks: "game1:comb_173|bcd:U4"
+ 23. Port Connectivity Checks: "game1:comb_173|bcd:U3"
+ 24. Port Connectivity Checks: "game1:comb_173|bcd:U2"
+ 25. Port Connectivity Checks: "game1:comb_173|bcd:U1"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun 12 22:46:18 2022       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; project                                     ;
+; Top-level Entity Name              ; project                                     ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 619                                         ;
+;     Total combinational functions  ; 619                                         ;
+;     Dedicated logic registers      ; 285                                         ;
+; Total registers                    ; 285                                         ;
+; Total pins                         ; 52                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; project            ; project            ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processors 3-4         ;   0.2%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; project.v                        ; yes             ; User Verilog HDL File  ; C:/Users/tracy/Desktop/project/project.v                                  ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mult.tdf       ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc     ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_add_sub.inc    ;         ;
+; multcore.inc                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/multcore.inc       ;         ;
+; bypassff.inc                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/bypassff.inc       ;         ;
+; altshift.inc                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altshift.inc       ;         ;
+; multcore.tdf                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/multcore.tdf       ;         ;
+; csa_add.inc                      ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/csa_add.inc        ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/mpar_add.inc       ;         ;
+; muleabz.inc                      ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/muleabz.inc        ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/mul_lfrg.inc       ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/mul_boothc.inc     ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/alt_ded_mult.inc   ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/dffpipe.inc        ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/mpar_add.tdf       ;         ;
+; altshift.tdf                     ; yes             ; Megafunction           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altshift.tdf       ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 619       ;
+;                                             ;           ;
+; Total combinational functions               ; 619       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 249       ;
+;     -- 3 input functions                    ; 193       ;
+;     -- <=2 input functions                  ; 177       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 449       ;
+;     -- arithmetic mode                      ; 170       ;
+;                                             ;           ;
+; Total registers                             ; 285       ;
+;     -- Dedicated logic registers            ; 285       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 52        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 197       ;
+; Total fan-out                               ; 2785      ;
+; Average fan-out                             ; 2.76      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                       ; Entity Name ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+-------------+--------------+
+; |project                      ; 619 (42)            ; 285 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |project                                                  ; project     ; work         ;
+;    |game1:comb_173|           ; 217 (187)           ; 115 (115)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173                                   ; game1       ; work         ;
+;       |bcd:U1|                ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173|bcd:U1                            ; bcd         ; work         ;
+;       |bcd:U2|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173|bcd:U2                            ; bcd         ; work         ;
+;       |bcd:U3|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173|bcd:U3                            ; bcd         ; work         ;
+;       |bcd:U4|                ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173|bcd:U4                            ; bcd         ; work         ;
+;       |bcd:U5|                ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173|bcd:U5                            ; bcd         ; work         ;
+;       |bcd:U6|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game1:comb_173|bcd:U6                            ; bcd         ; work         ;
+;    |game2:comb_174|           ; 360 (187)           ; 170 (76)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174                                   ; game2       ; work         ;
+;       |bcd:U1|                ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|bcd:U1                            ; bcd         ; work         ;
+;       |bcd:U2|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|bcd:U2                            ; bcd         ; work         ;
+;       |bcd:U3|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|bcd:U3                            ; bcd         ; work         ;
+;       |bcd:U4|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|bcd:U4                            ; bcd         ; work         ;
+;       |bcd:U5|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|bcd:U5                            ; bcd         ; work         ;
+;       |bcd:U6|                ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|bcd:U6                            ; bcd         ; work         ;
+;       |lpm_mult:Mult0|        ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|lpm_mult:Mult0                    ; lpm_mult    ; work         ;
+;          |multcore:mult_core| ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|lpm_mult:Mult0|multcore:mult_core ; multcore    ; work         ;
+;       |lpm_mult:Mult1|        ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|lpm_mult:Mult1                    ; lpm_mult    ; work         ;
+;          |multcore:mult_core| ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|lpm_mult:Mult1|multcore:mult_core ; multcore    ; work         ;
+;       |number:U7|             ; 110 (95)            ; 70 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U7                         ; number      ; work         ;
+;          |get:U4|             ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U7|get:U4                  ; get         ; work         ;
+;          |get:U5|             ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U7|get:U5                  ; get         ; work         ;
+;          |get:U6|             ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U7|get:U6                  ; get         ; work         ;
+;       |number:U8|             ; 24 (9)              ; 24 (9)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U8                         ; number      ; work         ;
+;          |get:U4|             ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U8|get:U4                  ; get         ; work         ;
+;          |get:U5|             ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U8|get:U5                  ; get         ; work         ;
+;          |get:U6|             ; 5 (5)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|game2:comb_174|number:U8|get:U6                  ; get         ; work         ;
++-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++----------------------------------------+---------------------------------------------------+
+; Register name                          ; Reason for Removal                                ;
++----------------------------------------+---------------------------------------------------+
+; game2:comb_174|number:U7|counter3[16]  ; Merged with game1:comb_173|counter_h[16]          ;
+; game2:comb_174|number:U8|counter3[16]  ; Merged with game1:comb_173|counter_h[16]          ;
+; game2:comb_174|number:U7|counter3[15]  ; Merged with game1:comb_173|counter_h[15]          ;
+; game2:comb_174|number:U8|counter3[15]  ; Merged with game1:comb_173|counter_h[15]          ;
+; game2:comb_174|number:U7|counter3[10]  ; Merged with game1:comb_173|counter_h[10]          ;
+; game2:comb_174|number:U8|counter3[10]  ; Merged with game1:comb_173|counter_h[10]          ;
+; game2:comb_174|number:U7|counter3[9]   ; Merged with game1:comb_173|counter_h[9]           ;
+; game2:comb_174|number:U8|counter3[9]   ; Merged with game1:comb_173|counter_h[9]           ;
+; game2:comb_174|number:U7|counter3[7]   ; Merged with game1:comb_173|counter_h[7]           ;
+; game2:comb_174|number:U8|counter3[7]   ; Merged with game1:comb_173|counter_h[7]           ;
+; game2:comb_174|number:U7|counter3[5]   ; Merged with game1:comb_173|counter_h[5]           ;
+; game2:comb_174|number:U8|counter3[5]   ; Merged with game1:comb_173|counter_h[5]           ;
+; game2:comb_174|number:U7|counter3[22]  ; Merged with game1:comb_173|counter_h[22]          ;
+; game2:comb_174|number:U8|counter3[22]  ; Merged with game1:comb_173|counter_h[22]          ;
+; game2:comb_174|number:U7|counter3[21]  ; Merged with game1:comb_173|counter_h[21]          ;
+; game2:comb_174|number:U8|counter3[21]  ; Merged with game1:comb_173|counter_h[21]          ;
+; game2:comb_174|number:U7|counter3[20]  ; Merged with game1:comb_173|counter_h[20]          ;
+; game2:comb_174|number:U8|counter3[20]  ; Merged with game1:comb_173|counter_h[20]          ;
+; game2:comb_174|number:U7|counter3[19]  ; Merged with game1:comb_173|counter_h[19]          ;
+; game2:comb_174|number:U8|counter3[19]  ; Merged with game1:comb_173|counter_h[19]          ;
+; game2:comb_174|number:U7|counter3[18]  ; Merged with game1:comb_173|counter_h[18]          ;
+; game2:comb_174|number:U8|counter3[18]  ; Merged with game1:comb_173|counter_h[18]          ;
+; game2:comb_174|number:U7|counter3[17]  ; Merged with game1:comb_173|counter_h[17]          ;
+; game2:comb_174|number:U8|counter3[17]  ; Merged with game1:comb_173|counter_h[17]          ;
+; game2:comb_174|number:U7|counter3[14]  ; Merged with game1:comb_173|counter_h[14]          ;
+; game2:comb_174|number:U8|counter3[14]  ; Merged with game1:comb_173|counter_h[14]          ;
+; game2:comb_174|number:U7|counter3[13]  ; Merged with game1:comb_173|counter_h[13]          ;
+; game2:comb_174|number:U8|counter3[13]  ; Merged with game1:comb_173|counter_h[13]          ;
+; game2:comb_174|number:U7|counter3[12]  ; Merged with game1:comb_173|counter_h[12]          ;
+; game2:comb_174|number:U8|counter3[12]  ; Merged with game1:comb_173|counter_h[12]          ;
+; game2:comb_174|number:U7|counter3[11]  ; Merged with game1:comb_173|counter_h[11]          ;
+; game2:comb_174|number:U8|counter3[11]  ; Merged with game1:comb_173|counter_h[11]          ;
+; game2:comb_174|number:U7|counter3[8]   ; Merged with game1:comb_173|counter_h[8]           ;
+; game2:comb_174|number:U8|counter3[8]   ; Merged with game1:comb_173|counter_h[8]           ;
+; game2:comb_174|number:U7|counter3[6]   ; Merged with game1:comb_173|counter_h[6]           ;
+; game2:comb_174|number:U8|counter3[6]   ; Merged with game1:comb_173|counter_h[6]           ;
+; game2:comb_174|number:U7|counter3[4]   ; Merged with game1:comb_173|counter_h[4]           ;
+; game2:comb_174|number:U8|counter3[4]   ; Merged with game1:comb_173|counter_h[4]           ;
+; game2:comb_174|number:U7|counter3[3]   ; Merged with game1:comb_173|counter_h[3]           ;
+; game2:comb_174|number:U8|counter3[3]   ; Merged with game1:comb_173|counter_h[3]           ;
+; game2:comb_174|number:U7|counter3[2]   ; Merged with game1:comb_173|counter_h[2]           ;
+; game2:comb_174|number:U8|counter3[2]   ; Merged with game1:comb_173|counter_h[2]           ;
+; game2:comb_174|number:U7|counter3[1]   ; Merged with game1:comb_173|counter_h[1]           ;
+; game2:comb_174|number:U8|counter3[1]   ; Merged with game1:comb_173|counter_h[1]           ;
+; game2:comb_174|number:U7|counter3[0]   ; Merged with game1:comb_173|counter_h[0]           ;
+; game2:comb_174|number:U8|counter3[0]   ; Merged with game1:comb_173|counter_h[0]           ;
+; game2:comb_174|number:U8|counter2[17]  ; Merged with game2:comb_174|number:U7|counter2[17] ;
+; game2:comb_174|number:U8|counter2[16]  ; Merged with game2:comb_174|number:U7|counter2[16] ;
+; game2:comb_174|number:U8|counter2[15]  ; Merged with game2:comb_174|number:U7|counter2[15] ;
+; game2:comb_174|number:U8|counter2[14]  ; Merged with game2:comb_174|number:U7|counter2[14] ;
+; game2:comb_174|number:U8|counter2[12]  ; Merged with game2:comb_174|number:U7|counter2[12] ;
+; game2:comb_174|number:U8|counter2[7]   ; Merged with game2:comb_174|number:U7|counter2[7]  ;
+; game2:comb_174|number:U8|counter2[4]   ; Merged with game2:comb_174|number:U7|counter2[4]  ;
+; game2:comb_174|number:U8|counter2[22]  ; Merged with game2:comb_174|number:U7|counter2[22] ;
+; game2:comb_174|number:U8|counter2[21]  ; Merged with game2:comb_174|number:U7|counter2[21] ;
+; game2:comb_174|number:U8|counter2[20]  ; Merged with game2:comb_174|number:U7|counter2[20] ;
+; game2:comb_174|number:U8|counter2[19]  ; Merged with game2:comb_174|number:U7|counter2[19] ;
+; game2:comb_174|number:U8|counter2[18]  ; Merged with game2:comb_174|number:U7|counter2[18] ;
+; game2:comb_174|number:U8|counter2[13]  ; Merged with game2:comb_174|number:U7|counter2[13] ;
+; game2:comb_174|number:U8|counter2[11]  ; Merged with game2:comb_174|number:U7|counter2[11] ;
+; game2:comb_174|number:U8|counter2[10]  ; Merged with game2:comb_174|number:U7|counter2[10] ;
+; game2:comb_174|number:U8|counter2[9]   ; Merged with game2:comb_174|number:U7|counter2[9]  ;
+; game2:comb_174|number:U8|counter2[8]   ; Merged with game2:comb_174|number:U7|counter2[8]  ;
+; game2:comb_174|number:U8|counter2[6]   ; Merged with game2:comb_174|number:U7|counter2[6]  ;
+; game2:comb_174|number:U8|counter2[5]   ; Merged with game2:comb_174|number:U7|counter2[5]  ;
+; game2:comb_174|number:U8|counter2[3]   ; Merged with game2:comb_174|number:U7|counter2[3]  ;
+; game2:comb_174|number:U8|counter2[2]   ; Merged with game2:comb_174|number:U7|counter2[2]  ;
+; game2:comb_174|number:U8|counter2[1]   ; Merged with game2:comb_174|number:U7|counter2[1]  ;
+; game2:comb_174|number:U8|counter2[0]   ; Merged with game2:comb_174|number:U7|counter2[0]  ;
+; game2:comb_174|number:U8|counter1[18]  ; Merged with game2:comb_174|number:U7|counter1[18] ;
+; game2:comb_174|number:U8|counter1[17]  ; Merged with game2:comb_174|number:U7|counter1[17] ;
+; game2:comb_174|number:U8|counter1[16]  ; Merged with game2:comb_174|number:U7|counter1[16] ;
+; game2:comb_174|number:U8|counter1[15]  ; Merged with game2:comb_174|number:U7|counter1[15] ;
+; game2:comb_174|number:U8|counter1[13]  ; Merged with game2:comb_174|number:U7|counter1[13] ;
+; game2:comb_174|number:U8|counter1[8]   ; Merged with game2:comb_174|number:U7|counter1[8]  ;
+; game2:comb_174|number:U8|counter1[5]   ; Merged with game2:comb_174|number:U7|counter1[5]  ;
+; game2:comb_174|number:U8|counter1[22]  ; Merged with game2:comb_174|number:U7|counter1[22] ;
+; game2:comb_174|number:U8|counter1[21]  ; Merged with game2:comb_174|number:U7|counter1[21] ;
+; game2:comb_174|number:U8|counter1[20]  ; Merged with game2:comb_174|number:U7|counter1[20] ;
+; game2:comb_174|number:U8|counter1[19]  ; Merged with game2:comb_174|number:U7|counter1[19] ;
+; game2:comb_174|number:U8|counter1[14]  ; Merged with game2:comb_174|number:U7|counter1[14] ;
+; game2:comb_174|number:U8|counter1[12]  ; Merged with game2:comb_174|number:U7|counter1[12] ;
+; game2:comb_174|number:U8|counter1[11]  ; Merged with game2:comb_174|number:U7|counter1[11] ;
+; game2:comb_174|number:U8|counter1[10]  ; Merged with game2:comb_174|number:U7|counter1[10] ;
+; game2:comb_174|number:U8|counter1[9]   ; Merged with game2:comb_174|number:U7|counter1[9]  ;
+; game2:comb_174|number:U8|counter1[7]   ; Merged with game2:comb_174|number:U7|counter1[7]  ;
+; game2:comb_174|number:U8|counter1[6]   ; Merged with game2:comb_174|number:U7|counter1[6]  ;
+; game2:comb_174|number:U8|counter1[4]   ; Merged with game2:comb_174|number:U7|counter1[4]  ;
+; game2:comb_174|number:U8|counter1[3]   ; Merged with game2:comb_174|number:U7|counter1[3]  ;
+; game2:comb_174|number:U8|counter1[2]   ; Merged with game2:comb_174|number:U7|counter1[2]  ;
+; game2:comb_174|number:U8|counter1[1]   ; Merged with game2:comb_174|number:U7|counter1[1]  ;
+; game2:comb_174|number:U8|counter1[0]   ; Merged with game2:comb_174|number:U7|counter1[0]  ;
+; game1:comb_173|h1[4]                   ; Stuck at GND due to stuck port data_in            ;
+; game1:comb_173|o2[4]                   ; Stuck at GND due to stuck port data_in            ;
+; game1:comb_173|o1[4]                   ; Stuck at GND due to stuck port data_in            ;
+; game1:comb_173|t2[4]                   ; Stuck at GND due to stuck port data_in            ;
+; game1:comb_173|t1[4]                   ; Stuck at GND due to stuck port data_in            ;
+; game1:comb_173|h2[4]                   ; Stuck at GND due to stuck port data_in            ;
+; Total Number of Removed Registers = 98 ;                                                   ;
++----------------------------------------+---------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 285   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 169   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 49    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 42 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; Yes        ; |project|game1:comb_173|p1_o[0]   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |project|game2:comb_174|o_2p[3]   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |project|game2:comb_174|o_1p[2]   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |project|game2:comb_174|nstate[3] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|game1:comb_173|h1[3]     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|game1:comb_173|o2[1]     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|game1:comb_173|o1[3]     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|game1:comb_173|t2[0]     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|game1:comb_173|t1[4]     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|game1:comb_173|h2[1]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: game2:comb_174|lpm_mult:Mult0  ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4        ; Untyped             ;
+; LPM_WIDTHB                                     ; 7        ; Untyped             ;
+; LPM_WIDTHP                                     ; 11       ; Untyped             ;
+; LPM_WIDTHR                                     ; 11       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: game2:comb_174|lpm_mult:Mult1  ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4        ; Untyped             ;
+; LPM_WIDTHB                                     ; 7        ; Untyped             ;
+; LPM_WIDTHP                                     ; 11       ; Untyped             ;
+; LPM_WIDTHR                                     ; 11       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                        ;
++---------------------------------------+-------------------------------+
+; Name                                  ; Value                         ;
++---------------------------------------+-------------------------------+
+; Number of entity instances            ; 2                             ;
+; Entity Instance                       ; game2:comb_174|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                             ;
+;     -- LPM_WIDTHB                     ; 7                             ;
+;     -- LPM_WIDTHP                     ; 11                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                           ;
+;     -- USE_EAB                        ; OFF                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                            ;
+; Entity Instance                       ; game2:comb_174|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 4                             ;
+;     -- LPM_WIDTHB                     ; 7                             ;
+;     -- LPM_WIDTHP                     ; 11                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                           ;
+;     -- USE_EAB                        ; OFF                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                            ;
++---------------------------------------+-------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game2:comb_174|bcd:U6"                                                                                                                             ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                          ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; binary ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "binary[11..4]" will be connected to GND. ;
+; seg3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
+; seg2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game2:comb_174|bcd:U5"                                                                                                                             ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                          ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; binary ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "binary[11..4]" will be connected to GND. ;
+; seg3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
+; seg2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game2:comb_174|bcd:U4"                                                                                                                             ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                          ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; binary ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "binary[11..4]" will be connected to GND. ;
+; seg3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
+; seg2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game2:comb_174|bcd:U3"                                                                                                                             ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                          ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; binary ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "binary[11..4]" will be connected to GND. ;
+; seg3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
+; seg2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game2:comb_174|bcd:U2"                                                                                                                             ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                          ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; binary ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "binary[11..4]" will be connected to GND. ;
+; seg3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
+; seg2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game2:comb_174|bcd:U1"                                                                                                                             ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                          ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; binary ; Input  ; Warning  ; Input port expression (4 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "binary[11..4]" will be connected to GND. ;
+; seg3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
+; seg2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                         ;
++--------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game1:comb_173|bcd:U6"                                                                                            ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; binary[11..5] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; seg3          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; seg2          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game1:comb_173|bcd:U5"                                                                                            ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; binary[11..5] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; seg3          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; seg2          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game1:comb_173|bcd:U4"                                                                                            ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; binary[11..5] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; seg3          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; seg2          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game1:comb_173|bcd:U3"                                                                                            ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; binary[11..5] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; seg3          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; seg2          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game1:comb_173|bcd:U2"                                                                                            ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; binary[11..5] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; seg3          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; seg2          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game1:comb_173|bcd:U1"                                                                                            ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; binary[11..5] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; seg3          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; seg2          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 52                          ;
+; cycloneiii_ff         ; 285                         ;
+;     CLR               ; 144                         ;
+;     ENA               ; 24                          ;
+;     ENA CLR           ; 25                          ;
+;     SLD               ; 2                           ;
+;     plain             ; 90                          ;
+; cycloneiii_lcell_comb ; 619                         ;
+;     arith             ; 170                         ;
+;         2 data inputs ; 130                         ;
+;         3 data inputs ; 40                          ;
+;     normal            ; 449                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 153                         ;
+;         4 data inputs ; 249                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.80                        ;
+; Average LUT depth     ; 3.11                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Sun Jun 12 22:46:04 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 6 design units, including 6 entities, in source file project.v
+    Info (12023): Found entity 1: project File: C:/Users/tracy/Desktop/project/project.v Line: 1
+    Info (12023): Found entity 2: game1 File: C:/Users/tracy/Desktop/project/project.v Line: 33
+    Info (12023): Found entity 3: game2 File: C:/Users/tracy/Desktop/project/project.v Line: 228
+    Info (12023): Found entity 4: number File: C:/Users/tracy/Desktop/project/project.v Line: 366
+    Info (12023): Found entity 5: get File: C:/Users/tracy/Desktop/project/project.v Line: 469
+    Info (12023): Found entity 6: bcd File: C:/Users/tracy/Desktop/project/project.v Line: 507
+Critical Warning (10846): Verilog HDL Instantiation warning at project.v(28): instance has no name File: C:/Users/tracy/Desktop/project/project.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at project.v(29): instance has no name File: C:/Users/tracy/Desktop/project/project.v Line: 29
+Info (12127): Elaborating entity "project" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at project.v(11): variable "p1h" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 11
+Warning (10235): Verilog HDL Always Construct warning at project.v(12): variable "p1t" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 12
+Warning (10235): Verilog HDL Always Construct warning at project.v(13): variable "p1o" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 13
+Warning (10235): Verilog HDL Always Construct warning at project.v(14): variable "p2h" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 14
+Warning (10235): Verilog HDL Always Construct warning at project.v(15): variable "p2t" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at project.v(16): variable "p2o" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 16
+Warning (10235): Verilog HDL Always Construct warning at project.v(19): variable "h1p" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at project.v(20): variable "t1p" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 20
+Warning (10235): Verilog HDL Always Construct warning at project.v(21): variable "o1p" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 21
+Warning (10235): Verilog HDL Always Construct warning at project.v(22): variable "h2p" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 22
+Warning (10235): Verilog HDL Always Construct warning at project.v(23): variable "t2p" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 23
+Warning (10235): Verilog HDL Always Construct warning at project.v(24): variable "o2p" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tracy/Desktop/project/project.v Line: 24
+Warning (10240): Verilog HDL Always Construct warning at project.v(9): inferring latch(es) for variable "p1_h", which holds its previous value in one or more paths through the always construct File: C:/Users/tracy/Desktop/project/project.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at project.v(9): inferring latch(es) for variable "p1_t", which holds its previous value in one or more paths through the always construct File: C:/Users/tracy/Desktop/project/project.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at project.v(9): inferring latch(es) for variable "p1_o", which holds its previous value in one or more paths through the always construct File: C:/Users/tracy/Desktop/project/project.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at project.v(9): inferring latch(es) for variable "p2_h", which holds its previous value in one or more paths through the always construct File: C:/Users/tracy/Desktop/project/project.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at project.v(9): inferring latch(es) for variable "p2_t", which holds its previous value in one or more paths through the always construct File: C:/Users/tracy/Desktop/project/project.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at project.v(9): inferring latch(es) for variable "p2_o", which holds its previous value in one or more paths through the always construct File: C:/Users/tracy/Desktop/project/project.v Line: 9
+Info (10041): Inferred latch for "p2_o[0]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_o[1]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_o[2]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_o[3]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_o[4]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_o[5]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_o[6]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[0]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[1]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[2]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[3]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[4]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[5]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_t[6]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[0]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[1]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[2]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[3]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[4]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[5]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p2_h[6]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[0]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[1]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[2]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[3]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[4]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[5]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_o[6]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[0]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[1]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[2]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[3]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[4]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[5]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_t[6]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[0]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[1]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[2]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[3]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[4]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[5]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (10041): Inferred latch for "p1_h[6]" at project.v(18) File: C:/Users/tracy/Desktop/project/project.v Line: 18
+Info (12128): Elaborating entity "game1" for hierarchy "game1:comb_173" File: C:/Users/tracy/Desktop/project/project.v Line: 28
+Warning (10036): Verilog HDL or VHDL warning at project.v(40): object "clk4" assigned a value but never read File: C:/Users/tracy/Desktop/project/project.v Line: 40
+Warning (10230): Verilog HDL assignment warning at project.v(55): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 55
+Warning (10230): Verilog HDL assignment warning at project.v(67): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 67
+Warning (10230): Verilog HDL assignment warning at project.v(79): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 79
+Warning (10230): Verilog HDL assignment warning at project.v(89): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 89
+Warning (10230): Verilog HDL assignment warning at project.v(96): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 96
+Warning (10230): Verilog HDL assignment warning at project.v(106): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 106
+Warning (10230): Verilog HDL assignment warning at project.v(107): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 107
+Warning (10230): Verilog HDL assignment warning at project.v(124): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 124
+Warning (10230): Verilog HDL assignment warning at project.v(131): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 131
+Warning (10230): Verilog HDL assignment warning at project.v(141): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 141
+Warning (10230): Verilog HDL assignment warning at project.v(142): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 142
+Warning (10230): Verilog HDL assignment warning at project.v(159): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 159
+Warning (10230): Verilog HDL assignment warning at project.v(166): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 166
+Warning (10230): Verilog HDL assignment warning at project.v(176): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 176
+Warning (10230): Verilog HDL assignment warning at project.v(177): truncated value with size 32 to match size of target (5) File: C:/Users/tracy/Desktop/project/project.v Line: 177
+Info (12128): Elaborating entity "bcd" for hierarchy "game1:comb_173|bcd:U1" File: C:/Users/tracy/Desktop/project/project.v Line: 189
+Warning (10230): Verilog HDL assignment warning at project.v(530): truncated value with size 32 to match size of target (4) File: C:/Users/tracy/Desktop/project/project.v Line: 530
+Warning (10230): Verilog HDL assignment warning at project.v(528): truncated value with size 32 to match size of target (4) File: C:/Users/tracy/Desktop/project/project.v Line: 528
+Warning (10230): Verilog HDL assignment warning at project.v(526): truncated value with size 32 to match size of target (4) File: C:/Users/tracy/Desktop/project/project.v Line: 526
+Info (12128): Elaborating entity "game2" for hierarchy "game2:comb_174" File: C:/Users/tracy/Desktop/project/project.v Line: 29
+Warning (10230): Verilog HDL assignment warning at project.v(253): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 253
+Warning (10230): Verilog HDL assignment warning at project.v(262): truncated value with size 32 to match size of target (4) File: C:/Users/tracy/Desktop/project/project.v Line: 262
+Warning (10230): Verilog HDL assignment warning at project.v(273): truncated value with size 32 to match size of target (4) File: C:/Users/tracy/Desktop/project/project.v Line: 273
+Warning (10230): Verilog HDL assignment warning at project.v(356): truncated value with size 32 to match size of target (12) File: C:/Users/tracy/Desktop/project/project.v Line: 356
+Warning (10230): Verilog HDL assignment warning at project.v(357): truncated value with size 32 to match size of target (12) File: C:/Users/tracy/Desktop/project/project.v Line: 357
+Info (12128): Elaborating entity "number" for hierarchy "game2:comb_174|number:U7" File: C:/Users/tracy/Desktop/project/project.v Line: 345
+Warning (10230): Verilog HDL assignment warning at project.v(389): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 389
+Warning (10230): Verilog HDL assignment warning at project.v(403): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 403
+Warning (10230): Verilog HDL assignment warning at project.v(417): truncated value with size 32 to match size of target (23) File: C:/Users/tracy/Desktop/project/project.v Line: 417
+Warning (10230): Verilog HDL assignment warning at project.v(427): truncated value with size 32 to match size of target (3) File: C:/Users/tracy/Desktop/project/project.v Line: 427
+Info (12128): Elaborating entity "get" for hierarchy "game2:comb_174|number:U7|get:U4" File: C:/Users/tracy/Desktop/project/project.v Line: 460
+Warning (10230): Verilog HDL assignment warning at project.v(499): truncated value with size 32 to match size of target (4) File: C:/Users/tracy/Desktop/project/project.v Line: 499
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game2:comb_174|Mult0" File: C:/Users/tracy/Desktop/project/project.v Line: 356
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game2:comb_174|Mult1" File: C:/Users/tracy/Desktop/project/project.v Line: 357
+Info (12130): Elaborated megafunction instantiation "game2:comb_174|lpm_mult:Mult0" File: C:/Users/tracy/Desktop/project/project.v Line: 356
+Info (12133): Instantiated megafunction "game2:comb_174|lpm_mult:Mult0" with the following parameter: File: C:/Users/tracy/Desktop/project/project.v Line: 356
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "7"
+    Info (12134): Parameter "LPM_WIDTHP" = "11"
+    Info (12134): Parameter "LPM_WIDTHR" = "11"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "game2:comb_174|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "game2:comb_174|lpm_mult:Mult0" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "game2:comb_174|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game2:comb_174|lpm_mult:Mult0" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "game2:comb_174|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "game2:comb_174|lpm_mult:Mult0" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/tracy/Desktop/project/output_files/project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 671 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 619 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Sun Jun 12 22:46:19 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/tracy/Desktop/project/output_files/project.map.smsg.
+
+

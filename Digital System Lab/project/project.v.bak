@@ -1,0 +1,113 @@
+module project(clk, rst,p1_h,p1_t,p1_o,p2_h,p2_t,p2_o,sw_h1,sw_h2,sw_t1,sw_t2,sw_o1,sw_o2);
+	input clk, rst,sw_h1,sw_h2,sw_t1,sw_t2,sw_o1,sw_o2;
+	output [6:0] p1_h,p1_t,p1_o,p2_h,p2_t,p2_o;
+	
+	reg [4:0] h1,t1,o1,h2,t2,o2;
+	reg clk1,clk2,clk3;
+	reg [22:0] counter,counter_t,counter_h;
+	
+	always@(posedge clk or negedge rst)begin//delay clock
+		if(~rst)begin
+			counter <= 0;
+			clk1 = 0;
+			counter_t <= 0;
+			clk2 = 0;
+			counter_h <= 0;
+			clk3 = 0;
+		end
+		else if(counter==50000)begin
+			counter <=0;
+			clk1 = ~clk1;
+		end
+		else if(counter_t==30000)begin
+			counter_t <=0;
+			clk2 = ~clk2;
+		end
+		else if(counter==10000)begin
+			counter_h <=0;
+			clk3 = ~clk3;
+		end
+		else begin
+			counter <= counter + 1;
+			counter_t <= counter_t + 1;
+			counter_h <= counter_h + 1;
+		end
+	end
+	
+	always@(posedge clk1 or negedge rst)begin
+		if(~rst)
+			stop = 1;
+		else 
+			stop = stop;
+	end
+	
+	always@(posedge clk1 or negedge rst)begin
+		if(~rst)begin
+			o1 = 0;
+			o2 = 0;
+		end
+		else if(sw_o1==1)
+			o1=o1+1;
+		else if(sw_o2==1)
+			o2=o2+1;
+		else if(o1>9)
+			o1=0;
+		else if(o2>9)
+			o2=0;
+		else begin
+			o1=o1;
+			o2=o1;
+		end
+	end
+	
+	bcd U1(.binary(min), .seg2(min1), .seg1(min0));	
+	bcd U2(.binary(sec), .seg2(sec1), .seg1(sec0));
+	bcd U3(.binary(msec), .seg2(msec1), .seg1(msec0));
+		
+endmodule
+
+module bcd(binary, seg2, seg1);
+	input [6:0] binary;
+	output [6:0] seg1, seg2;
+	
+	reg [6:0] seg1, seg2;	
+	reg [3:0] tens;
+	reg [3:0] ones;
+
+	always@(binary)
+	begin
+ 		tens = binary/10;
+ 		ones = binary%10;
+	end
+	
+	always@(tens)begin
+ 		case(tens)
+ 			  4'b0000:	seg2 = 7'b1000000;//0
+ 			  4'b0001:	seg2 = 7'b1111001;//1
+ 			  4'b0010:	seg2 = 7'b0100100;//2	
+ 			  4'b0011:	seg2 = 7'b0110000;//3	
+ 			  4'b0100:	seg2 = 7'b0011001;//4	
+ 			  4'b0101:	seg2 = 7'b0010010;//5	
+ 			  4'b0110:	seg2 = 7'b0000010;//6 
+ 			  4'b0111:	seg2 = 7'b1111000;//7	
+ 			  4'b1000:	seg2 = 7'b0000000;//8
+ 			  4'b1001:	seg2 = 7'b0011000;//9
+ 			  default:	seg2 = 7'b1111111;//all blind
+ 		endcase
+	end
+	always@(ones)begin
+ 		case(ones)
+			4'b0000:	seg1 = 7'b1000000;//0
+			4'b0001:	seg1 = 7'b1111001;//1
+ 			4'b0010:	seg1 = 7'b0100100;//2	
+ 			4'b0011:	seg1 = 7'b0110000;//3	
+ 			4'b0100:	seg1 = 7'b0011001;//4	
+ 			4'b0101:	seg1 = 7'b0010010;//5	
+ 			4'b0110:	seg1 = 7'b0000010;//6 
+ 			4'b0111:	seg1 = 7'b1111000;//7	
+ 			4'b1000:	seg1 = 7'b0000000;//8
+ 			4'b1001:	seg1 = 7'b0011000;//9
+ 			default: seg1 = 7'b1111111;//all blind
+ 		endcase
+	end	
+endmodule
