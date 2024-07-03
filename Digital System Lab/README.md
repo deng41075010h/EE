@@ -8,7 +8,7 @@
 硬體：Altera DE10-Lite  
 使用 Verilog 實現 FPGA 設計
 
-包含兩個小遊戲，透過switch切換遊戲
+包含兩個小遊戲，透過switch切換遊戲  
 Game 1 - SLOT MACHINE  
 Game 2 - Guess who's bigger
 <br>
@@ -29,6 +29,8 @@ Game 2 - Guess who's bigger
 以此類推2P，直到按完最後一個數字，七段顯示器會閃爍三次表示選擇完畢  
 最後比較兩位玩家的數字，較大者為贏家，並在七段顯示器顯示贏家為1P或2P  
 上方的按鈕為reset可重置遊戲  
+
+![image](https://github.com/deng41075010h/EE/blob/main/Digital%20System%20Lab/image.png)  
 
 ### 程式碼
 見[附件](https://github.com/deng41075010h/EE/blob/main/Digital%20System%20Lab/project/project.v)  
