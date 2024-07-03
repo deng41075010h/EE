@@ -33,5 +33,5 @@ ppt展示影片請看youtube
 <br>
 
 ### 程式碼
-(見附件)
+見附件(project->project.ASM)
 
