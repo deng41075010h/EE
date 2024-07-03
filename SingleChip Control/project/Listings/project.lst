@@ -1,0 +1,258 @@
+A51 MACRO ASSEMBLER  PROJECT                                                              06/01/2023 23:44:47 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\project.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE project.ASM SET(SMALL) DEBUG PRINT(.\Listings\project.lst) OBJECT(.\Obj
+                      ects\project.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                 ORG 0000H
+0000 02003C            2                     LJMP MAINSET
+                       3                     
+0003                   4                     ORG 0003H
+                       5                     
+0003 1165              6                     CALL OFF_F
+0005 9000D8            7                     MOV DPTR,#LOOK
+                       8                     
+0008 32                9                     RETI
+                      10                     
+                      11                     
+0013                  12                     ORG 0013H
+                      13                             
+0013 11CF             14                     CALL DELAY
+                      15                     
+0015 7964             16                     MOV R1,#100
+0017 9000E6           17     STOP:   MOV DPTR,#SHOW1
+001A 7800             18                     MOV R0,#0
+001C 11A7             19             ACALL S_3
+001E D9F7             20                     DJNZ R1,STOP
+                      21                             
+                      22                     
+0020 79FF             23                     MOV R1,#0FFH
+0022 9000D8           24     LOOP:   MOV DPTR,#LOOK
+0025 7850             25             MOV R0,#50H
+0027 117F             26             ACALL D_3
+0029 D9F7             27                     DJNZ R1,LOOP
+                      28     
+002B 7932             29                     MOV R1,#50
+002D                  30     ALLBLACK:
+002D 9000E2           31             MOV DPTR,#TABLE_BLACK
+0030 7800             32                     MOV R0,#0
+0032 11A7             33                     ACALL S_3
+0034 D9F7             34                     DJNZ R1,ALLBLACK
+                      35                     
+                      36                     
+0036 9000D8           37                     MOV DPTR,#LOOK
+                      38     
+                      39     
+0039 C28B             40                     CLR IE1
+003B 32               41                     RETI
+                      42                     
+                      43     
+                      44                 
+003C                  45     MAINSET:
+                      46                     
+003C                  47     MAIN: 
+003C D288             48             SETB TCON.0
+003E D28A             49                     SETB TCON.2
+0040 75A885           50                     MOV IE,#10000101B
+                      51                     
+                      52                     
+0043 E580             53                     MOV A,P0 
+                      54                 ;MOV A,#00EH
+                      55                 ;MOV B,#2
+                      56                 ;MUL AB
+                      57                 ;JNB PSW.2,NEXT
+A51 MACRO ASSEMBLER  PROJECT                                                              06/01/2023 23:44:47 PAGE     2
+
+                      58                 ;SETB 00H
+0045                  59     NEXT:   
+0045 75F00A           60                 MOV B,#10
+0048 84               61                 DIV AB 
+0049 A8F0             62                 MOV R0,B 
+004B 75F00A           63                 MOV B,#10
+004E 84               64                 DIV AB 
+004F AEF0             65                 MOV R6,B
+0051 FF               66                 MOV R7,A
+                      67             
+                      68                 ;JNB 00H,STOP       
+                      69                 ;MOV A,#06H
+                      70                 ;ADD A,R0
+                      71                 ;MOV B,#10
+                      72                 ;DIV AB
+                      73                 ;MOV R0,B   
+                      74             ;ADD A,#05H
+                      75                 ;ADD A,R6
+                      76                 ;MOV B,#10
+                      77                 ;DIV AB
+                      78                 ;MOV R6,B
+                      79             ;ADD A,#02H
+                      80             ;ADD A,R7
+                      81             ;MOV R7,A
+                      82                     ;CLR 00H
+0052 8853             83     SAVE:   MOV 53H,R0
+0054 8E52             84                     MOV 52H,R6
+0056 8F51             85                     MOV 51H,R7
+                      86                     
+                      87     
+0058 7F64             88                     MOV R7,#100
+005A 9000D8           89     DIGIT4: MOV DPTR,#LOOK
+005D 7850             90             MOV R0,#50H
+005F 117F             91             ACALL D_3
+0061 DFF7             92                     DJNZ R7,DIGIT4
+                      93     
+                      94     
+                      95                     ;CALL DELAY
+                      96                     
+0063 80D7             97                     JMP MAIN
+                      98             
+0065                  99     OFF_F:
+0065 7901            100                     MOV R1,#1       
+0067                 101     OFF:
+0067 9000EA          102             MOV DPTR,#TABLE_OFF
+006A 7800            103                     MOV R0,#0
+006C 11A7            104                     ACALL S_3
+006E D9F7            105                     DJNZ R1,OFF
+                     106                     
+0070 30B2F2          107                     JNB P3.2,OFF_F
+                     108     
+0073 790A            109                     MOV R1,#10
+0075                 110     ALLOFF:
+0075 9000E2          111             MOV DPTR,#TABLE_BLACK
+0078 7800            112                     MOV R0,#0
+007A 11A7            113                     ACALL S_3
+007C D9F7            114                     DJNZ R1,ALLOFF
+                     115                     
+007E 22              116                     RET
+                     117                     
+007F E6              118     D_3:    MOV A,@R0
+0080 75A007          119                     MOV P2,#00000111B
+0083 93              120                     MOVC A,@A+DPTR
+0084 F590            121                     MOV P1,A
+0086 11CF            122                     CALL DELAY
+                     123                     
+A51 MACRO ASSEMBLER  PROJECT                                                              06/01/2023 23:44:47 PAGE     3
+
+0088 08              124     D_2:    INC R0
+0089 E6              125                     MOV A,@R0
+008A 75A00B          126                     MOV P2,#00001011B
+008D 93              127                     MOVC A,@A+DPTR
+008E F590            128                     MOV P1,A
+0090 11CF            129                     CALL DELAY
+                     130                     
+0092 08              131     D_1:    INC R0
+0093 E6              132                     MOV A,@R0
+0094 75A00D          133                     MOV P2,#00001101B
+0097 93              134                     MOVC A,@A+DPTR
+0098 F590            135                     MOV P1,A
+009A 11CF            136                     CALL DELAY
+                     137     
+009C 08              138     D_0:    INC R0
+009D E6              139                     MOV A,@R0
+009E 75A00E          140                     MOV P2,#00001110B
+00A1 93              141                     MOVC A,@A+DPTR
+00A2 F590            142                     MOV P1,A
+00A4 11CF            143                     CALL DELAY
+                     144                     
+00A6 22              145                     RET
+                     146                     
+                     147                     
+00A7 E8              148     S_3:    MOV A,R0
+00A8 75A007          149                     MOV P2,#00000111B
+00AB 93              150                     MOVC A,@A+DPTR
+00AC F590            151                     MOV P1,A
+00AE 11CF            152                     CALL DELAY
+                     153                     
+00B0 08              154     S_2:    INC R0
+00B1 E8              155                     MOV A,R0
+00B2 75A00B          156                     MOV P2,#00001011B
+00B5 93              157                     MOVC A,@A+DPTR
+00B6 F590            158                     MOV P1,A
+00B8 11CF            159                     CALL DELAY
+                     160                     
+00BA 08              161     S_1:    INC R0
+00BB E8              162                     MOV A,R0
+00BC 75A00D          163                     MOV P2,#00001101B
+00BF 93              164                     MOVC A,@A+DPTR
+00C0 F590            165                     MOV P1,A
+00C2 11CF            166                     CALL DELAY
+                     167     
+00C4 08              168     S_0:    INC R0
+00C5 E8              169                     MOV A,R0
+00C6 75A00E          170                     MOV P2,#00001110B
+00C9 93              171                     MOVC A,@A+DPTR
+00CA F590            172                     MOV P1,A
+00CC 11CF            173                     CALL DELAY
+                     174                     
+00CE 22              175                     RET
+                     176                     
+00CF 7C04            177     DELAY:  MOV R4,#4
+00D1 7BFA            178     DE2:    MOV R3,#250
+00D3 DBFE            179     DE1:    DJNZ R3,DE1
+00D5 DCFA            180                     DJNZ R4,DE2
+00D7 22              181                     RET
+                     182                     
+00D8 C0F9A4B0        183     LOOK:   DB 0C0H,0F9H,0A4H,0B0H,99H,92H,82H,0F8H,80H,90H
+00DC 999282F8                
+00E0 8090                    
+00E2                 184     TABLE_BLACK:
+00E2 FFFFFFFF        185             DB 11111111B,11111111B,11111111B,11111111B
+00E6                 186     SHOW1:
+00E6 9287C08C        187                     DB 10010010B,10000111B,11000000B,10001100B
+A51 MACRO ASSEMBLER  PROJECT                                                              06/01/2023 23:44:47 PAGE     4
+
+00EA                 188     TABLE_OFF:
+00EA FFC08E8E        189             DB 11111111B,11000000B,10001110B,10001110B
+00EE                 190     ED:
+                     191                     END
+A51 MACRO ASSEMBLER  PROJECT                                                              06/01/2023 23:44:47 PAGE     5
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ALLBLACK . . . . .  C ADDR   002DH   A   
+ALLOFF . . . . . .  C ADDR   0075H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DE1. . . . . . . .  C ADDR   00D3H   A   
+DE2. . . . . . . .  C ADDR   00D1H   A   
+DELAY. . . . . . .  C ADDR   00CFH   A   
+DIGIT4 . . . . . .  C ADDR   005AH   A   
+D_0. . . . . . . .  C ADDR   009CH   A   
+D_1. . . . . . . .  C ADDR   0092H   A   
+D_2. . . . . . . .  C ADDR   0088H   A   
+D_3. . . . . . . .  C ADDR   007FH   A   
+ED . . . . . . . .  C ADDR   00EEH   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+IE1. . . . . . . .  B ADDR   0088H.3 A   
+LOOK . . . . . . .  C ADDR   00D8H   A   
+LOOP . . . . . . .  C ADDR   0022H   A   
+MAIN . . . . . . .  C ADDR   003CH   A   
+MAINSET. . . . . .  C ADDR   003CH   A   
+NEXT . . . . . . .  C ADDR   0045H   A   
+OFF. . . . . . . .  C ADDR   0067H   A   
+OFF_F. . . . . . .  C ADDR   0065H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+SAVE . . . . . . .  C ADDR   0052H   A   
+SHOW1. . . . . . .  C ADDR   00E6H   A   
+STOP . . . . . . .  C ADDR   0017H   A   
+S_0. . . . . . . .  C ADDR   00C4H   A   
+S_1. . . . . . . .  C ADDR   00BAH   A   
+S_2. . . . . . . .  C ADDR   00B0H   A   
+S_3. . . . . . . .  C ADDR   00A7H   A   
+TABLE_BLACK. . . .  C ADDR   00E2H   A   
+TABLE_OFF. . . . .  C ADDR   00EAH   A   
+TCON . . . . . . .  D ADDR   0088H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
