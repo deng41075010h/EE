@@ -3,7 +3,9 @@
 鄧仲妤
 
 ## 程式能力
-C/C++、Python、Java、Verilog、組合語言(8051)
+C/C++、Python、Java、Verilog、組合語言(8051)  
+Android開發
+
 ## 學習經歷
 1. [電機專題製作](https://github.com/deng41075010h/EE/tree/main/ee%20project)  
 2. [數位系統實驗期末專題](https://github.com/deng41075010h/EE/tree/main/Digital%20System%20Lab)
