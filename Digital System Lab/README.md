@@ -34,4 +34,4 @@ Game 2 - Guess who's bigger
 
 ### 程式碼
 見[附件](https://github.com/deng41075010h/EE/blob/main/Digital%20System%20Lab/project/project.v)  
-檔案路徑：project -> project.v
+檔案路徑：project/project.v
