@@ -23,7 +23,7 @@ reference: 陳昕陽, "彩色電子紙之色彩量測與影像處理晶片設計
 3. Error Diffusion (誤差擴散)  
    半色調演算法(HalfTone)之一
    
-   ![img](https://github.com/deng41075010h/EE/blob/main/Lab/Floyd-Steinberg.png#pic_left)
+   ![img](https://github.com/deng41075010h/EE/blob/main/Lab/Floyd-Steinberg.png#pic_left=180*110)
    
 5. CFA mapping  
    符合彩色電子紙的排列
