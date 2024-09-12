@@ -24,28 +24,6 @@ module Float2fix(
 	);
 
 
-	// debug process
-	// synthesis translate_off
-	
-/*	
-	integer f_c;
-	integer cnt = 0;
-	initial begin
-		f_c = $fopen("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_outdata/Float2fix_bin_debug.txt", "w");
-		#0 @(posedge rst_n);
-		while (cnt <= 1448*1072) begin
-			@(negedge clk)
-			$fwrite(f_c, "%d : L_fp= %f A_fp= %f B_fp= %f L_bin= %d A_bin= %d B_bin= %d\n", 
-			cnt, $bitstoshortreal(L_fp), $bitstoshortreal(A_fp), $bitstoshortreal(B_fp), 
-			$signed(L_bin[31:0]), $signed(A_bin[31:0]), $signed(B_bin[31:0]));
-			cnt = cnt + 1;
-		end
-		#10 $fclose(f_c);
-	end
-*/	
-	// synthesis translate_on
-	
-
 
 endmodule
 
