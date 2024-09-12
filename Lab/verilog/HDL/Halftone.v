@@ -298,27 +298,6 @@ module Halftone(
 	assign B_level = BLv_int[7:0];
 	
 	
-	// debug process
-	// synthesis translate_off
-/*	
-	integer f2;
-	integer cnt = 0;
-	initial begin
-	  f2 = $fopen("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_outdata/HalfTone_bin_debug.txt", "w");
-	  #0 @(posedge rst_n);
-	  while (cnt <= 1448*1072) begin
-			@(negedge pixel_clk)
-			$fwrite(f2, "row %d, col %d : BC = %d GC = %d RC = %d BH = %d GH = %d RH = %d\n",
-			Pixel_Row[11:0], Pixel_Col[11:0], 
-			$signed(BC_data), $signed(GC_data), $signed(RC_data),
-			B_level[7:0], G_level[7:0], R_level[7:0]);
-			cnt = cnt + 1;
-		end
-	  #10 $fclose(f2);
-	end
-*/	
-	 
-	 // synthesis translate_on
 	 
 endmodule
 
