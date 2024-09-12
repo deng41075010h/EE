@@ -34,7 +34,7 @@ Reference： 陳昕陽, "彩色電子紙之色彩量測與影像處理晶片設�
 ![img](https://github.com/deng41075010h/EE/blob/main/Lab/method.png)
 
 <br>
-已完成軟體演算法架構驗證實作，正在進行硬體模擬
+已完成軟體演算法架構驗證實作，以及硬體模擬
 
 ### 程式碼
 [軟體演算法架構驗證](https://github.com/deng41075010h/EE/blob/main/Lab/C%2B%2B%20code/main.cpp)  
