@@ -31,10 +31,10 @@ module Main_Top (
 	Clock_gen Clk_gen(
 		.sys_rst_n(sys_rst_n),	  // input
 		.clk50_src(clk50_src),	  // input
-		.clk200(clk200),	        // output
-		.clk100(clk100),	        // output
-		.clk50(clk50),	           // output
-		.rst_n(rst_n)	           // output
+		.clk200(clk200),	  // output
+		.clk100(clk100),	  // output
+		.clk50(clk50),	          // output
+		.rst_n(rst_n)	          // output
 	);
 
 	Float2fix float2fix(
@@ -51,39 +51,39 @@ module Main_Top (
 	Color_Enhance Color_Enhance(
 		.rst_n(rst2_n),      // input
 		.clk(pixel_clk),     // input
-		.L_data(L_bin),	   // input [31:0]
-		.A_data(A_bin),	   // input [31:0]
-		.B_data(B_bin),	   // input [31:0]
-		.LE_data(LE_data),	// output [31:0]
-		.AE_data(AE_data),	// output [31:0]
-		.BE_data(BE_data)	   // output [31:0]
+		.L_data(L_bin),	     // input [31:0]
+		.A_data(A_bin),	     // input [31:0]
+		.B_data(B_bin),	     // input [31:0]
+		.LE_data(LE_data),   // output [31:0]
+		.AE_data(AE_data),   // output [31:0]
+		.BE_data(BE_data)    // output [31:0]
 	);
 
 	Lab2rgb Lab2rgb(
-		.rst_n(rst2_n),	   // input
-		.clk(pixel_clk),     // input
-		.LE_data(LE_data),	// input [31:0]
+		.rst_n(rst2_n),	        // input
+		.clk(pixel_clk),        // input
+		.LE_data(LE_data),      // input [31:0]
 		.AE_data(AE_data),	// input [31:0]
 		.BE_data(BE_data),	// input [31:0]
 		.BC_data(BC_data),	// output [31:0]
 		.GC_data(GC_data),	// output [31:0]
-		.RC_data(RC_data)	   // output [31:0]
+		.RC_data(RC_data)	// output [31:0]
 	);
 
 	
 	HalfTone_Top HalfTone_Top (
-		.rst_n(rst_n), // input
-		.clk200(clk200), // input
-		.pixel_clk(pixel_clk), // input
-		.Pixel_Col(Pixel_Col), // input [11:0]
-		.Pixel_Row(Pixel_Row), // input [11:0]
-		.BC_data(BC_data),	// input [31:0] RGB
-		.GC_data(GC_data),	// input [31:0] RGB
-		.RC_data(RC_data),	// input [31:0] RGB
-		.B_level(B_level), // output [7:0] level
-		.G_level(G_level), // output [7:0] level
-		.R_level(R_level), // output [7:0] level
-		.osram_rst_n(rst2_n) // output
+		.rst_n(rst_n),            // input
+		.clk200(clk200),          // input
+		.pixel_clk(pixel_clk),    // input
+		.Pixel_Col(Pixel_Col),    // input [11:0]
+		.Pixel_Row(Pixel_Row),    // input [11:0]
+		.BC_data(BC_data),	  // input [31:0] RGB
+		.GC_data(GC_data),	  // input [31:0] RGB
+		.RC_data(RC_data),	  // input [31:0] RGB
+		.B_level(B_level),        // output [7:0] level
+		.G_level(G_level),        // output [7:0] level
+		.R_level(R_level),        // output [7:0] level
+		.osram_rst_n(rst2_n)      // output
 	);
 	
 	
