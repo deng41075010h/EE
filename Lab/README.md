@@ -88,6 +88,9 @@ Reference： 陳昕陽, "彩色電子紙之色彩量測與影像處理晶片設�
 ### 程式碼
 [軟體演算法架構驗證](https://github.com/deng41075010h/EE/blob/main/Lab/C%2B%2B%20code/main.cpp)  
 檔案路徑： C++ code/main.cpp  
+
+[硬體模擬](https://github.com/deng41075010h/EE/tree/main/Lab/verilog/HDL)  
+檔案路徑： verilog/HDL/Main_Top.v
  
 
 
