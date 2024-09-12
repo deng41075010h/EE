@@ -69,28 +69,6 @@ module Lab2rgb(
 	Multiplier mul_B (.a(b1), .b(const_255), .q(BC_data));
 
 
-	// debug process
-	// synthesis translate_off
-
-/*	
-	integer f1;
-	integer cnt = 0;
-	initial begin
-	  f1 = $fopen("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_outdata/Lab2rgb_bin_debug.txt", "w");
-	  #0 @(posedge rst_n);
-	  while (cnt <= 1448*1072) begin
-			@(negedge clk)
-			$fwrite(f1, "%d : LE= %d AE= %d BE= %d BC= %d GC= %d RC= %d\n",
-			cnt, $signed(LE_data), $signed(AE_data), $signed(BE_data),
-			$signed(BC_data), $signed(GC_data), $signed(RC_data));
-			cnt = cnt + 1;
-		end
-	  #10 $fclose(f1);
-	end
-*/	 
-	 
-	// synthesis translate_on
-
 
 endmodule
 
