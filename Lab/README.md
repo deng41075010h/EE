@@ -15,17 +15,64 @@ Reference： 陳昕陽, "彩色電子紙之色彩量測與影像處理晶片設�
 ![img](https://github.com/deng41075010h/EE/blob/main/Lab/process.png)
 
 1. Color Enhancement  
-   以輸入的Lab資料，對a, b分別乘1.5做色彩增強
+   以輸入的Lab資料，對a, b分別乘1.5做色彩增強  
+
    
 2. Lab to sRGB
    色彩空間轉換
+
+   **Lab to XYZ:**
+
+   $$ f\left(\frac{Y}{Y_n}\right) = \frac{L + 16}{116} $$
+   
+   $$ f\left(\frac{X}{X_n}\right) = \frac{a}{500} + f\left(\frac{Y}{Y_n}\right) $$
+   
+   $$ f\left(\frac{Z}{Z_n}\right) = f\left(\frac{Y}{Y_n}\right) - \frac{b}{200} $$
+
+   $$
+   t =
+   \begin{cases} 
+   f(t)^3 & \text{, } f(t)^3 > 0.008856 \\
+   \frac{f(t) - \frac{16}{116}}{7.787} & \text{, otherwise}
+   \end{cases}
+   $$
+
+   $$
+   Y = t \cdot Y_n , \quad
+   X = t \cdot X_n , \quad
+   Z = t \cdot Z_n
+   $$
+
+
+   **XYZ to linear sRGB:**
+
+   $$
+   \begin{bmatrix}
+   R \\
+   G \\
+   B
+   \end{bmatrix}=
+   \begin{bmatrix}
+   3.240 & -1.535 & -0.498 \\
+   -0.966 & 1.874 & 0.041 \\
+   0.056 & -0.204 & 1.057
+   \end{bmatrix}
+   \begin{bmatrix}
+   X \\
+   Y \\
+   Z
+   \end{bmatrix}
+   $$
+
+
+
    
 3. Error Diffusion (誤差擴散)  
    半色調演算法(HalfTone)之一
    
    ![img](https://github.com/deng41075010h/EE/blob/main/Lab/Floyd-Steinberg.png#pic_left)
    
-5. CFA mapping  
+4. CFA mapping  
    符合彩色電子紙的排列  
 
 ### 方法
