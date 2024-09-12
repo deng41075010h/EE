@@ -120,23 +120,5 @@ module CFAmapping (
 	assign cfa_G = cfaG;
 	assign cfa_B = cfaB;
 	
-	// debug process
-	// synthesis translate_off
-/*	
-	integer f3;
-	integer cnt = 0;
-	initial begin
-	  f3 = $fopen("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_outdata/cfa_bin_debug.txt", "w");
-	  #0 @(posedge rst_n);
-	  while (cnt <= 1448*1072) begin
-			@(negedge clk)
-			$fwrite(f3, "cnt %d : BH = %d GH = %d RH = %d BC = %d GC = %d RC = %d\n",
-			cnt, B, G, R, cfa_B, cfa_G, cfa_R);
-			cnt = cnt + 1;
-		end
-	  #10 $fclose(f3);
-	end
-*/	
-	// synthesis translate_on
 
 endmodule
