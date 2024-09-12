@@ -28,26 +28,5 @@ module Color_Enhance(
 	
 	assign LE_data = L_data;
 	
-	// debug process
-	// synthesis translate_off
-	
-	/*
-	integer f_e;
-	integer cnt = 0;
-	initial begin
-		f_e = $fopen("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_outdata/color_enhance_bin_debug.txt", "w");
-		#0 @(posedge rst_n);
-		while (cnt <= 1448*1072) begin
-			@(negedge clk)
-			$fwrite(f_e, "%d : L= %d A= %d B= %d LE= %d AE= %d BE= %d\n", 
-			cnt, $signed(L_data), $signed(A_data), $signed(B_data), 
-			$signed(LE_data), $signed(AE_data), $signed(BE_data));
-			cnt = cnt + 1;
-		end
-		#10 $fclose(f_e);
-	end
-	*/
-	// synthesis translate_on
-	
 	
 endmodule
