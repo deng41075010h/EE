@@ -3,16 +3,6 @@
 module Pixel_memory(
 	input rst_n,
 	input clk50,
-//	output [12:0] DRAM_ADDR,
-//	output [1:0] DRAM_BA,
-//	output dram_cas_n,
-//	output dram_cke,
-//	output dram_clk,
-//	output dram_cs_n,	
-//	inout [31:0] DRAM_DQ,
-//	output [3:0] dram_dqm,
-//	output dram_ras_n,
-//	output dram_we_n,
 	output [31:0] L_data,
 	output [31:0] A_data,
 	output [31:0] B_data,
@@ -55,22 +45,22 @@ module Pixel_memory(
 	// synthesis translate_off
 	initial
 		begin
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_0.dat", memory_0,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_1.dat", memory_1,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_2.dat", memory_2,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_3.dat", memory_3,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_4.dat", memory_4,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_5.dat", memory_5,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_6.dat", memory_6,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_7.dat", memory_7,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_8.dat", memory_8,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_9.dat", memory_9,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_10.dat", memory_10,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_11.dat", memory_11,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_12.dat", memory_12,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_13.dat", memory_13,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_14.dat", memory_14,0);
-			$readmemh("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_data/pixel_rom_15.dat", memory_15,0);
+			$readmemh("sim_data/pixel_rom_0.dat", memory_0,0);
+			$readmemh("sim_data/pixel_rom_1.dat", memory_1,0);
+			$readmemh("sim_data/pixel_rom_2.dat", memory_2,0);
+			$readmemh("sim_data/pixel_rom_3.dat", memory_3,0);
+			$readmemh("sim_data/pixel_rom_4.dat", memory_4,0);
+			$readmemh("sim_data/pixel_rom_5.dat", memory_5,0);
+			$readmemh("sim_data/pixel_rom_6.dat", memory_6,0);
+			$readmemh("sim_data/pixel_rom_7.dat", memory_7,0);
+			$readmemh("sim_data/pixel_rom_8.dat", memory_8,0);
+			$readmemh("sim_data/pixel_rom_9.dat", memory_9,0);
+			$readmemh("sim_data/pixel_rom_10.dat", memory_10,0);
+			$readmemh("sim_data/pixel_rom_11.dat", memory_11,0);
+			$readmemh("sim_data/pixel_rom_12.dat", memory_12,0);
+			$readmemh("sim_data/pixel_rom_13.dat", memory_13,0);
+			$readmemh("sim_data/pixel_rom_14.dat", memory_14,0);
+			$readmemh("sim_data/pixel_rom_15.dat", memory_15,0);
 		end
 	// synthesis translate_on
 
@@ -178,7 +168,7 @@ module Pixel_memory(
 	integer f_out;
 	integer cnt = 0;
 	initial begin
-	  f_out = $fopen("C:/Users/joyce/Documents/QuartusProjects/DE2-115_Sean/TB/sim_outdata/memout_bin_debug.txt", "w");
+	  f_out = $fopen("sim_outdata/memout_bin_debug.txt", "w");
 	  #0 @(posedge rst_n);
 	  while (cnt <= 1448*1072) begin
 			@(negedge pixel_clk)
